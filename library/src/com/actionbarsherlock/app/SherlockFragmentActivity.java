@@ -116,9 +116,14 @@ public class SherlockFragmentActivity extends Watson implements OnActionModeStar
 
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
+        if (isFinishing()) {
+            return false;
+        }
+        
         if (getSherlock().dispatchKeyEvent(event)) {
             return true;
         }
+        
         return super.dispatchKeyEvent(event);
     }
 
