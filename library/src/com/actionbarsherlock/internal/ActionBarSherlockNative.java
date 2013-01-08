@@ -73,6 +73,10 @@ public class ActionBarSherlockNative extends ActionBarSherlock {
 
     @Override
     public boolean dispatchOptionsItemSelected(android.view.MenuItem item) {
+        if (item == null || mMenu == null) {
+            return false;
+        }
+        
         if (DEBUG) Log.d(TAG, "[dispatchOptionsItemSelected] item: " + item.getTitleCondensed());
 
         final boolean result = callbackOptionsItemSelected(mMenu.findItem(item));
