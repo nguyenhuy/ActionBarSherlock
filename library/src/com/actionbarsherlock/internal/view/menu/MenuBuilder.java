@@ -357,7 +357,7 @@ public class MenuBuilder implements Menu {
         for (int i = 0; i < itemCount; i++) {
             final MenuItem item = getItem(i);
             final View v = item.getActionView();
-            if (v != null && v.getId() != View.NO_ID) {
+            if (v != null && v.getId() != View.NO_ID && viewStates != null) {
                 v.restoreHierarchyState(viewStates);
             }
             if (item.hasSubMenu()) {
