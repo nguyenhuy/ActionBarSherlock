@@ -884,6 +884,7 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
             } else if (v == mVoiceButton) {
                 onVoiceClicked();
             } else if (v == mQueryTextView) {
+                mQueryTextView.showDropDown();
                 forceSuggestionQuery();
             }
         }
